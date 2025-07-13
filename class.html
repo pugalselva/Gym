@@ -19,6 +19,61 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.min.css" rel="stylesheet">
+    <style>
+        /* CrossFit/Functional Training specific styles */
+        #class-crossfit thead {
+            background-color: #ffc107 !important;
+            /* Yellow/orange for CrossFit */
+            color: #212529 !important;
+        }
+
+        .highlight-crossfit {
+            background-color: rgba(255, 193, 7, 0.1);
+            border-left: 3px solid #ffc107;
+            border-right: 3px solid #ffc107;
+        }
+
+        .highlight-crossfit h5 {
+            color: #ffc107;
+            font-weight: 700;
+        }
+
+        /* Cardio/HIIT specific styles */
+        #class-cardio thead {
+            background-color: #e31c25 !important;
+            /* Using your theme's red color */
+            color: #fff !important;
+        }
+
+        .highlight-cardio {
+            background-color: rgba(227, 28, 37, 0.1);
+            border-left: 3px solid #e31c25;
+            border-right: 3px solid #e31c25;
+        }
+
+        .highlight-cardio h5 {
+            color: #e31c25;
+            font-weight: 700;
+        }
+
+        /* Strength Training specific styles */
+        #class-powerlifting thead {
+            background-color: #343a40 !important;
+            /* Dark color for strength training */
+            color: #fff !important;
+        }
+
+        .highlight-strength {
+            background-color: rgba(52, 58, 64, 0.1);
+            border-left: 3px solid #343a40;
+            border-right: 3px solid #343a40;
+        }
+
+        .highlight-strength h5 {
+            color: #343a40;
+            font-weight: 700;
+        }
+    </style>
 </head>
 
 <body class="bg-white">
@@ -38,6 +93,7 @@
                     <a href="feature.html" class="nav-item nav-link">Our Features</a>
                     <a href="class.html" class="nav-item nav-link active">Classes</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="login.html" class="nav-item nav-link">Login</a>
                 </div>
             </div>
         </nav>
@@ -89,104 +145,443 @@
 
     <!-- Class Timetable Start -->
     <div class="container gym-feature py-5">
-    <div class="d-flex flex-column text-center mb-5">
-        <h4 class="text-primary font-weight-bold">Fitness Classes</h4>
-        <h4 class="display-4 font-weight-bold">Weekly Class Schedule</h4>
-    </div>
-    <div class="tab-class">
-        <ul class="nav nav-pills justify-content-center mb-4">
-            <li class="nav-item">
-                <a class="nav-link active" data-toggle="pill" href="#class-all">All Classes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#class-cardio">HIIT & Cardio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#class-crossfit">Functional Training</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="pill" href="#class-powerlifting">Strength Training</a>
-            </li>
-        </ul>
-        <div class="tab-content">
-            <div id="class-all" class="container tab-pane p-0 active">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-lg m-0">
-                        <thead class="bg-secondary text-white text-center">
-                            <tr>
-                                <th>Time</th>
-                                <th>Monday</th>
-                                <th>Tuesday</th>
-                                <th>Wednesday</th>
-                                <th>Thursday</th>
-                                <th>Friday</th>
-                                <th>Saturday</th>
-                                <th>Sunday</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-center">
-                            <tr>
-                                <th class="bg-secondary text-white align-middle">6:00 AM - 8:00 AM</th>
-                                <td><h5>Morning HIIT</h5>Sarah Johnson</td>
-                                <td></td>
-                                <td><h5>Functional Circuit</h5>Mike Chen</td>
-                                <td></td>
-                                <td><h5>Strength Foundations</h5>David Rodriguez</td>
-                                <td></td>
-                                <td><h5>Sunrise Cardio</h5>Sarah Johnson</td>
-                            </tr>
-                            <tr>
-                                <th class="bg-secondary text-white align-middle">10:00 AM - 12:00 PM</th>
-                                <td></td>
-                                <td><h5>Power Lifting</h5>David Rodriguez</td>
-                                <td></td>
-                                <td><h5>Cardio Blast</h5>Emma Wilson</td>
-                                <td></td>
-                                <td><h5>Cross Training</h5>Mike Chen</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th class="bg-secondary text-white align-middle">5:00 PM - 7:00 PM</th>
-                                <td><h5>Afterburn HIIT</h5>Emma Wilson</td>
-                                <td></td>
-                                <td><h5>Strength & Conditioning</h5>David Rodriguez</td>
-                                <td></td>
-                                <td><h5>Evening Cardio</h5>Sarah Johnson</td>
-                                <td></td>
-                                <td><h5>Functional Fitness</h5>Mike Chen</td>
-                            </tr>
-                            <tr>
-                                <th class="bg-secondary text-white align-middle">7:00 PM - 9:00 PM</th>
-                                <td></td>
-                                <td><h5>Metabolic Conditioning</h5>Emma Wilson</td>
-                                <td></td>
-                                <td><h5>Advanced Cross Training</h5>Mike Chen</td>
-                                <td></td>
-                                <td><h5>Strength Session</h5>David Rodriguez</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="d-flex flex-column text-center mb-5">
+            <h4 class="text-primary font-weight-bold">Fitness Classes</h4>
+            <h4 class="display-4 font-weight-bold">Weekly Class Schedule</h4>
+        </div>
+        <div class="tab-class">
+            <ul class="nav nav-pills justify-content-center mb-4">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#class-all">All Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#class-cardio">HIIT & Cardio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#class-crossfit">Functional Training</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#class-powerlifting">Strength Training</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="class-all" class="container tab-pane p-0 active">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-lg m-0">
+                            <thead class="bg-secondary text-white text-center">
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                    <th>Saturday</th>
+                                    <th>Sunday</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">6:00 AM - 8:00 AM</th>
+                                    <td>
+                                        <h5>Morning HIIT</h5>Sarah Johnson
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Functional Circuit</h5>Mike Chen
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Strength Foundations</h5>David Rodriguez
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Sunrise Cardio</h5>Sarah Johnson
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">10:00 AM - 12:00 PM</th>
+                                    <td></td>
+                                    <td>
+                                        <h5>Power Lifting</h5>David Rodriguez
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Cardio Blast</h5>Emma Wilson
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Cross Training</h5>Mike Chen
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">5:00 PM - 7:00 PM</th>
+                                    <td>
+                                        <h5>Afterburn HIIT</h5>Emma Wilson
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Strength & Conditioning</h5>David Rodriguez
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Evening Cardio</h5>Sarah Johnson
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Functional Fitness</h5>Mike Chen
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">7:00 PM - 9:00 PM</th>
+                                    <td></td>
+                                    <td>
+                                        <h5>Metabolic Conditioning</h5>Emma Wilson
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Advanced Cross Training</h5>Mike Chen
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Strength Session</h5>David Rodriguez
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- HIIT & Cardio Tab -->
-            <div id="class-cardio" class="container tab-pane fade p-0">
-                <!-- Content matches structure of all-classes but highlights cardio -->
-            </div>
-            
-            <!-- Functional Training Tab -->
-            <div id="class-crossfit" class="container tab-pane fade p-0">
-                <!-- Content matches structure of all-classes but highlights functional training -->
-            </div>
-            
-            <!-- Strength Training Tab -->
-            <div id="class-powerlifting" class="container tab-pane fade p-0">
-                <!-- Content matches structure of all-classes but highlights strength training -->
+
+                <!-- HIIT & Cardio Tab -->
+                <div id="class-cardio" class="container tab-pane fade p-0">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-lg m-0">
+                            <thead class="bg-danger text-white text-center">
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                    <th>Saturday</th>
+                                    <th>Sunday</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <th class="bg-danger text-white align-middle">6:00 AM - 8:00 AM</th>
+                                    <td class="highlight-cardio">
+                                        <h5>Morning HIIT</h5>
+                                        <p class="text-danger mb-1">High Intensity Interval Training</p>
+                                        <small>Sarah Johnson</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Functional Circuit</h5>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Strength Foundations</h5>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                    <td class="highlight-cardio">
+                                        <h5>Sunrise Cardio</h5>
+                                        <p class="text-danger mb-1">Endurance Training</p>
+                                        <small>Sarah Johnson</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-danger text-white align-middle">10:00 AM - 12:00 PM</th>
+                                    <td></td>
+                                    <td>
+                                        <h5>Power Lifting</h5>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                    <td class="highlight-cardio">
+                                        <h5>Cardio Blast</h5>
+                                        <p class="text-danger mb-1">High Energy Cardio</p>
+                                        <small>Emma Wilson</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Cross Training</h5>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-danger text-white align-middle">5:00 PM - 7:00 PM</th>
+                                    <td class="highlight-cardio">
+                                        <h5>Afterburn HIIT</h5>
+                                        <p class="text-danger mb-1">Metabolic Conditioning</p>
+                                        <small>Emma Wilson</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Strength & Conditioning</h5>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                    <td class="highlight-cardio">
+                                        <h5>Evening Cardio</h5>
+                                        <p class="text-danger mb-1">Fat Burning Session</p>
+                                        <small>Sarah Johnson</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Functional Fitness</h5>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-danger text-white align-middle">7:00 PM - 9:00 PM</th>
+                                    <td></td>
+                                    <td class="highlight-cardio">
+                                        <h5>Metabolic Conditioning</h5>
+                                        <p class="text-danger mb-1">HIIT Variation</p>
+                                        <small>Emma Wilson</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Advanced Cross Training</h5>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Strength Session</h5>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Functional Training Tab -->
+                <div id="class-crossfit" class="container tab-pane fade p-0">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-lg m-0">
+                            <thead class="bg-warning text-dark text-center">
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                    <th>Saturday</th>
+                                    <th>Sunday</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <th class="bg-warning text-dark align-middle">6:00 AM - 8:00 AM</th>
+                                    <td>
+                                        <h5>Morning HIIT</h5>
+                                        <small>Sarah Johnson</small>
+                                    </td>
+                                    <td></td>
+                                    <td class="highlight-crossfit">
+                                        <h5>Functional Circuit</h5>
+                                        <p class="text-warning mb-1">CrossFit-style Circuit</p>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Strength Foundations</h5>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Sunrise Cardio</h5>
+                                        <small>Sarah Johnson</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-warning text-dark align-middle">10:00 AM - 12:00 PM</th>
+                                    <td></td>
+                                    <td>
+                                        <h5>Power Lifting</h5>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Cardio Blast</h5>
+                                        <small>Emma Wilson</small>
+                                    </td>
+                                    <td></td>
+                                    <td class="highlight-crossfit">
+                                        <h5>Cross Training</h5>
+                                        <p class="text-warning mb-1">Functional Movement Focus</p>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-warning text-dark align-middle">5:00 PM - 7:00 PM</th>
+                                    <td>
+                                        <h5>Afterburn HIIT</h5>
+                                        <small>Emma Wilson</small>
+                                    </td>
+                                    <td></td>
+                                    <td class="highlight-crossfit">
+                                        <h5>Strength & Conditioning</h5>
+                                        <p class="text-warning mb-1">CrossFit Methodology</p>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Evening Cardio</h5>
+                                        <small>Sarah Johnson</small>
+                                    </td>
+                                    <td></td>
+                                    <td class="highlight-crossfit">
+                                        <h5>Functional Fitness</h5>
+                                        <p class="text-warning mb-1">CrossFit-inspired</p>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-warning text-dark align-middle">7:00 PM - 9:00 PM</th>
+                                    <td></td>
+                                    <td>
+                                        <h5>Metabolic Conditioning</h5>
+                                        <small>Emma Wilson</small>
+                                    </td>
+                                    <td></td>
+                                    <td class="highlight-crossfit">
+                                        <h5>Advanced Cross Training</h5>
+                                        <p class="text-warning mb-1">Competitive CrossFit</p>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Strength Session</h5>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Strength Training Tab -->
+                <div id="class-powerlifting" class="container tab-pane fade p-0">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-lg m-0">
+                            <thead class="bg-dark text-white text-center">
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                    <th>Saturday</th>
+                                    <th>Sunday</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <th class="bg-dark text-white align-middle">6:00 AM - 8:00 AM</th>
+                                    <td>
+                                        <h5>Morning HIIT</h5>
+                                        <small>Sarah Johnson</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Functional Circuit</h5>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                    <td></td>
+                                    <td class="highlight-strength">
+                                        <h5>Strength Foundations</h5>
+                                        <p class="text-dark mb-1">Beginner Powerlifting</p>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Sunrise Cardio</h5>
+                                        <small>Sarah Johnson</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-dark text-white align-middle">10:00 AM - 12:00 PM</th>
+                                    <td></td>
+                                    <td class="highlight-strength">
+                                        <h5>Power Lifting</h5>
+                                        <p class="text-dark mb-1">Competition Prep</p>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Cardio Blast</h5>
+                                        <small>Emma Wilson</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Cross Training</h5>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-dark text-white align-middle">5:00 PM - 7:00 PM</th>
+                                    <td>
+                                        <h5>Afterburn HIIT</h5>
+                                        <small>Emma Wilson</small>
+                                    </td>
+                                    <td></td>
+                                    <td class="highlight-strength">
+                                        <h5>Strength & Conditioning</h5>
+                                        <p class="text-dark mb-1">Olympic Lifting Focus</p>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Evening Cardio</h5>
+                                        <small>Sarah Johnson</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Functional Fitness</h5>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-dark text-white align-middle">7:00 PM - 9:00 PM</th>
+                                    <td></td>
+                                    <td>
+                                        <h5>Metabolic Conditioning</h5>
+                                        <small>Emma Wilson</small>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <h5>Advanced Cross Training</h5>
+                                        <small>Mike Chen</small>
+                                    </td>
+                                    <td></td>
+                                    <td class="highlight-strength">
+                                        <h5>Strength Session</h5>
+                                        <p class="text-dark mb-1">Max Effort Training</p>
+                                        <small>David Rodriguez</small>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
     <!-- Class Timetable End -->
     
 
@@ -270,16 +665,7 @@
                     <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-primary mb-4">Popular Links</h4>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Features</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Classes</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                </div>
-            </div>
+
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-primary mb-4">Opening Hours</h4>
                 <h5 class="text-white">Monday - Friday</h5>
@@ -290,7 +676,7 @@
         </div>
         <div class="container border-top border-dark pt-5">
             <p class="m-0 text-center text-white">
-                &copy; <a class="text-white font-weight-bold" href="www.misoftwaresolutionsllp.com">Misoftware Solution</a>. All Rights Reserved. Designed by
+                &copy;<a class="text-white font-weight-bold" href="https://www.amplefitgym.com ">2025 Ample Fit Gym</a>. All Rights Reserved. Designed by
                 <a class="text-white font-weight-bold" href="https://www.misoftwaresolutionsllp.com">Misoftware Solution</a>
             </p>
         </div>
